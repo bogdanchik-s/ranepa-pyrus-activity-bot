@@ -9,7 +9,7 @@ from services.database import DatabaseServiceSettings
 from core.process_manager import AppProcessManager
 
 
-async def test_handle_pyrus_message_none_success(sqs_settings: SQSServiceSettings, database_settings: DatabaseServiceSettings) -> None
+async def test_handle_pyrus_message_none_success(sqs_settings: SQSServiceSettings, database_settings: DatabaseServiceSettings) -> None:
     core = AppProcessManager(
         database=DatabaseService(
             host=database_settings.host,
@@ -38,7 +38,7 @@ async def test_handle_pyrus_message_none_success(sqs_settings: SQSServiceSetting
     assert result is None
 
 
-async def test_handle_pyrus_message_raises_error(sqs_settings: SQSServiceSettings, database_settings: DatabaseServiceSettings) -> None
+async def test_handle_pyrus_message_raises_error(sqs_settings: SQSServiceSettings, database_settings: DatabaseServiceSettings) -> None:
     with pytest.raises((NoCredentialsError, LoginError, ReadTimeoutError, PostgresError, InterfaceError)):
         core = AppProcessManager(
             database=DatabaseService(
