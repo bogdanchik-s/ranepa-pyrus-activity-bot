@@ -12,6 +12,7 @@ dependencies = [
     "pydantic>=2.13.0",
     "pydantic-settings>=2.13.1",
     "pyee>=13.0.1",
+    "pytest>=9.0.3",
     "yarl>=1.23.0",
 ]
 
